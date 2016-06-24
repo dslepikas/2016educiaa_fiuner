@@ -1,0 +1,6 @@
+Realice el punto 2.1.b de la Guia de Ejercitación Práctica.
+a) Dise˜ne e implemente un firmware sobre la EDU-CIAA que haga parpadear el led amarillo con un periodo
+que permita visualizar el proceso. Emplear retardo por software.
+b) Dise˜ne e implemente un firmware sobre la EDU-CIAA que haga parpadear un led con un periodo que
+permita visualizar el proceso. Mediante las cuatro teclas disponibles se debe poder seleccionar el led activo.
+Emplear retardo por software.
