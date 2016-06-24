@@ -79,7 +79,10 @@
 
 
 /*==================[macros and definitions]=================================*/
-
+#define PUERTO_SERIE     7  /*Puerto Serie utilizado */
+#define PIN_TX           1  /*Pin para TX */
+#define PIN_RX           2  /*Pin para RX */
+#define BAUDIOS     115200  /*Baudios para comuminicación serie*/
 
 
 /*==================[internal data declaration]==============================*/
@@ -99,11 +102,11 @@
 
 void InicializarSerie(){
 	/* inicializa el Puerto Serie - Puerto 7, pin 1 tx pin 2 rx */
-	Chip_SCU_PinMux(7,1, MD_PDN, SCU_MODE_FUNC6); /* UART2 TXD */
-	Chip_SCU_PinMux(7,2,MD_PLN|MD_EZI|MD_ZI,SCU_MODE_FUNC6); /* UART2 RXD */
+	Chip_SCU_PinMux(PUERTO_SERIE,PIN_TX, MD_PDN, SCU_MODE_FUNC6); /* UART2 TXD */
+	Chip_SCU_PinMux(PUERTO_SERIE,PIN_RX,MD_PLN|MD_EZI|MD_ZI,SCU_MODE_FUNC6); /* UART2 RXD */
 
 	Chip_UART_Init(LPC_USART2);
-	Chip_UART_SetBaud(LPC_USART2, 115200);
+	Chip_UART_SetBaud(LPC_USART2, BAUDIOS);
 	Chip_UART_SetupFIFOS(LPC_USART2, UART_FCR_FIFO_EN | UART_FCR_TRG_LEV0);
 	Chip_UART_TXEnable(LPC_USART2);
 }
