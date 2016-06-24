@@ -1,0 +1,25 @@
+Led Multicolor
+
+Si bien la premisa era la siguiente:
+___
+Diseñe un driver, (timers.c y timers.h), que le permita a la aplicación acceder a los temporizadores del microcontrolador.
+Programe una aplicación que emplee los drivers led.c, teclas.c y timers.c con el siguiente comportamiento:
+Al energizar la placa deben parpadear alternadamente los leds Rojo y Verde, 250ms encendido cada led.
+Al presionar la TECLA 1, se debe variar el color del led RGB en, al menos,  16 colores diferentes.
+La temporización de los leds se debe realizar a través del RIT Timer. (ver Temporizadores e Interrupciones)  
+___
+Esta versión se realizó con algunas variantes
+
+a) Al iniciar se establece un color por defecto definido en main.c
+b) los colores se pueden configurar cambiando las intensidades y tiempos de los leds RG por saltos 
+   la cantdidad de saltos la define la constante RANGO (para el ejemplo =5, un valor mayor acusa parpadeo)
+   Tecla 1 - Rojo 
+   Tecla 2 - Verde
+   Tecla 3 - Azul
+   Tecla 4 - Intensidad (también cambia de 0 a RANGO, mantiene la proporción pero sostiene una fracción    proporcional de tiempo el encendido de los leds RGB, si es cero el RGB se apaga)
+c) Los leds rojo, amarillo y verde, se utilizan de indicadores por parpadeo de cambio de valor y cuando se 
+   cero se encienden los leds contiguos por un intervalo 10 veces mayor.
+
+Nota: queda pendiente mejorar el driver de teclado.
+
+20160514-Daniel Slepikas-daniel@slepikas.com
