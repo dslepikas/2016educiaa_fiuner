@@ -55,6 +55,7 @@
  * modification history (new versions first)
  * -----------------------------------------------------------
  * 20160520 v0.0.1 initials initial version
+ * 20160701 v0.0.2 Agregar flag
  *
  */
 
@@ -116,5 +117,11 @@ Chip_UART_ReadByte(LPC_USART2);
 }
 
 void Enviar_Byte_Serie (uint8_t dato){
-Chip_UART_SendByte(LPC_USART2, dato);
+
+	while (Chip_UART_CheckBusy(LPC_USART2)!=RESET)
+			{
+			asm("nop");
+			} /*while */
+
+	Chip_UART_SendByte(LPC_USART2, dato);
 }

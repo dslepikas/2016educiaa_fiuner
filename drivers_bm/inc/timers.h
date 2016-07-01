@@ -64,7 +64,7 @@
 #include "stdint.h"
 
 /*==================[macros]=================================================*/
-#define INTERVALO_TIMER    1  /*Intervalo entre interrupciones (milisegundos)*/
+#define INTERVALO_TIMER  100  /*Intervalo entre interrupciones (milisegundos)*/
 #define IRQ_RIT           11 /*Interrupción correspondiente al RIT*/
 
 /*Pseudo booleanos*/
